@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
+		<meta name="description" content="Reusable charts d3js, un pattern réutilisable pour créer des composants JS">
+		<meta name="author" content="Jeremy Pinhel">
+		<title>Reusable charts</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
@@ -101,11 +102,11 @@
 					</section>
 				</section>
 				<section data-state="content-slide">
-					<section data-state="content-slide">
+					<section>
 						<h3>A quoi ça ressemble ?</h3>
 						<p class="fragment">déterminer les élements qui sont customisable</p>
 					</section>
-					<section data-state="content-slide" data-markdown>
+					<section data-markdown>
 						<script type="text/template">
 							## Horizontal bar chart
 
@@ -128,7 +129,7 @@
 							```
 						</script>
 					</section>
-					<section data-state="content-slide" data-markdown>
+					<section data-markdown>
 						<script type="text/template">
 							## Horizontal bar chart
 
@@ -148,14 +149,29 @@
 							```
 						</script>
 					</section>
+					<section data-state="exemple-chart">
+						<h4>Et voilà ...</h4>
+						<div id="chart"></div>
+					</section>
 				</section>
-				<section data-state="content-slide">Pokedex</section>
+				<section data-state="content-slide">
+					<h3>Et si on allait plus loin ...</h3>
+					<ul>
+						<li><span>Méthode simple</span></li>
+						<li><span>Se base sur la data</span></li>
+					</ul>
+				</section>
+				<section data-state="content-slide">
+					<a href="pokedex/index.html" target="_blank">Pokedex</a>
+				</section>
 				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page"><section>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+		<script src="lib/js/horizontal-barchart.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -188,6 +204,26 @@
 				if (slideHeader.length > 0) {
 					slideHeader[0].remove()
 				}
+			}, false );
+
+			Reveal.addEventListener('exemple-chart', function() {
+				var dataChart = [
+				  {name: "Locke",    value:  4},
+				  {name: "Reyes",    value:  8},
+				  {name: "Ford",     value: 15}
+				];
+
+				var runningChart = barChart({margin: {top: 30, right: 10, left: 10, bottom: 20}})
+				                   .width(700)
+				                   .barHeight(10)
+				                   .barPadding(20)
+				                   .fillColor('#5F91A0');
+
+				d3.select('#chart .svg-chart').remove();
+
+				d3.select('#chart')
+				  .datum(dataChart)
+				  .call(runningChart);
 			}, false );
 
 		</script>
