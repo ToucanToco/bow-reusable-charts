@@ -44,6 +44,10 @@
 							<li><span>Mike Bostock</span></li>
 							<li><span>Manipuler le DOM en se basant sur la data</span></li>
 						</ul>
+						<aside class="notes">
+							Mike Bostock est le créateur de d3js, il travaillait pour le new york times
+							Sa librairie se base sur les data pour construite le DOM
+						</aside>
 					</section>
 					<section data-state="content-slide">
 						<h3>Problématique ...</h3>
@@ -99,12 +103,19 @@
 						<p>une convention proposée par Mike Bostock en 2012</p>
 						<p class="fragment">indépendant des frameworks</p>
 						<p class="fragment">une proposition pour les web components</p>
+						<aside class="notes">
+							Il propose une convention simple qui permet de se détacher de toute librarie et framework.
+							Permettant ainsi une méthode pour construire des web components
+
+							Un nouveau développeur qui veut contruire web component commence par Angualarjs et React.
+							Même si ça fait le café, on ne sait pas toujours ce se passe à l'intérieur.
+						</aside>
 					</section>
 				</section>
 				<section data-state="content-slide">
 					<section>
 						<h3>A quoi ça ressemble ?</h3>
-						<p class="fragment">déterminer les élements qui sont customisable</p>
+						<p class="fragment">déterminer les élements qui sont customisables</p>
 					</section>
 					<section data-markdown>
 						<script type="text/template">
@@ -149,22 +160,41 @@
 							```
 						</script>
 					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Fonction call d3js
+							```Javascript
+								d3.select('#chart').datum(data).call(horizontalBarChart)
+
+								// équivalent à
+
+								horizontalBarChart(d3.select('#chart').datum(data))
+							```
+							Invoque une fois la fonction horizontalBarChart, en lui donnant l'élement #chart.
+						</script>
+					</section>
 					<section data-state="exemple-chart">
 						<h4>Et voilà ...</h4>
 						<div id="chart"></div>
 					</section>
+					<!-- <section data-state="exemple-chart-call">
+						<h4>Et voilà ...</h4>
+						<div id="chart-call"></div>
+					</section> -->
 				</section>
 				<section data-state="content-slide">
 					<h3>Et si on allait plus loin ...</h3>
 					<ul>
 						<li><span>Méthode simple</span></li>
-						<li><span>Se base sur la data</span></li>
+						<li><span>Un composant de recherche</span></li>
 					</ul>
 				</section>
 				<section data-state="content-slide">
 					<a href="pokedex/index.html" target="_blank">Pokedex</a>
 				</section>
-				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page"><section>
+				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page">
+					<h3>D3js web components <3</h3>
+				<section>
 			</div>
 		</div>
 
@@ -177,8 +207,7 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
-				showNotes: true,
+				showNotes: false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
@@ -226,6 +255,24 @@
 				  .call(runningChart);
 			}, false );
 
+			// Reveal.addEventListener('exemple-chart-call', function() {
+			// 	var dataChart = [
+			// 	  {name: "Locke",    value:  4}
+			// 	];
+			//
+			// 	var runningChart = barChart({margin: {top: 30, right: 10, left: 10, bottom: 20}})
+			// 										 .width(700)
+			// 										 .barHeight(10)
+			// 										 .barPadding(20)
+			// 										 .fillColor('#5F91A0');
+			//
+			// 	d3.select('#chart-call .svg-chart').remove();
+			//
+			// 	d3.select('#chart-call')
+			// 		.datum(dataChart)
+			//
+			// 	runningChart(d3.select('#chart-call'));
+			// }, false );
 		</script>
 	</body>
 </html>
