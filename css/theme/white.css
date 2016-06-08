@@ -42,7 +42,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #222;
+  color: #404040;
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -288,15 +288,60 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
-.reveal--first-page h1,
-.reveal--first-page h3 {
+/*********************************************
+ * CUSTOM CLASS
+ *********************************************/
+.reveal--special-page {
   color: #fff;
 }
 
-.reveal--first-page h3 {
+.reveal--special-page h1,
+.reveal--special-page h3 {
+  color: #fff;
+}
+
+.reveal--special-page h3 {
   font-size: 0.9em;
 }
 
-.reveal--first-page h3 span {
+.reveal--special-page h3 span {
   background-color: #F3C600;
+}
+
+.reveal--header-slide {
+  background-color: #F3C600;
+  height: 10px;
+}
+
+.reveal ul li {
+  color: #A0D1C5;
+}
+
+.reveal ul li span {
+  color: #404040;
+}
+
+.reveal .list-image {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.reveal .ul-img {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 2px 0px rgba(143,143,143,0.5);
+  width: 250px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.reveal .ul-img img {
+  border: none;
+}
+
+.reveal .ul-img p {
+  margin: 0;
+  font-size: 0.4em;
+  font-weight: 400;
 }

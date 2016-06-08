@@ -24,14 +24,133 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-color="#A0D1C5" class="reveal--first-page">
+				<section data-background-color="#A0D1C5" class="reveal--special-page" data-state="special-slide">
 					<h1>Reusable charts d3js</h1>
 					<h3><span>Un pattern réutilisable pour créer des composants JS</span></h3>
 				</section>
-				<section>Introduction</section>
-				<section>Exemple</section>
-				<section>Pokedex</section>
-				<section>Conclusion<section>
+				<section data-state="content-slide">
+					<h4>Jeremy Pinhel</h4>
+					<p>FullStack Developer @ ToucanToco</p>
+					<img src="img/TOUCANTOCO_logo.png" class="plain" height="100" width="100">
+					<p>CTO @ Colecule</p>
+				</section>
+				<section data-state="content-slide">
+					<section data-state="content-slide">
+						<h3>Un peu d'histoire...</h3>
+						<h4>D3js</h4>
+						<br />
+						<ul>
+							<li><span>Mike Bostock</span></li>
+							<li><span>Manipuler le DOM en se basant sur la data</span></li>
+						</ul>
+					</section>
+					<section data-state="content-slide">
+						<h3>Problématique ...</h3>
+						<br />
+						<div class="list-image">
+							<div class="ul-img">
+								<img src="img/chart-types/barchart.png"/>
+								<p>Bar chart</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/horizontalBarchart.png"/>
+								<p>Leaderboard</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/linechart.png"/>
+								<p>Line chart</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/stackedBarchart.png"/>
+								<p>Stacked bar chart</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/leaderboardCenteredAverage.png"/>
+								<p>Centered average</p>
+							</div>
+						</div>
+						<div class="list-image">
+							<div class="ul-img">
+								<img src="img/chart-types/slopegraph.png"/>
+								<p>Slopegraph</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/bubbleChart.png"/>
+								<p>Bubble chart</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/barlinechart.png"/>
+								<p>Bar line chart</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/waterfall.png"/>
+								<p>Waterfall</p>
+							</div>
+							<div class="ul-img">
+								<img src="img/chart-types/carto.png"/>
+								<p>Carto</p>
+							</div>
+						</div>
+					</section>
+					<section data-state="content-slide">
+						<h3>Début de solution</h3>
+						<h4>Reusable charts</h4>
+						<p>une convention proposée par Mike Bostock en 2012</p>
+						<p class="fragment">indépendant des frameworks</p>
+						<p class="fragment">une proposition pour les web components</p>
+					</section>
+				</section>
+				<section data-state="content-slide">
+					<section data-state="content-slide">
+						<h3>A quoi ça ressemble ?</h3>
+						<p class="fragment">déterminer les élements qui sont customisable</p>
+					</section>
+					<section data-state="content-slide" data-markdown>
+						<script type="text/template">
+							## Horizontal bar chart
+
+							```Javascript
+								function barChart(config) {
+									var animationDuration = 500;
+
+									function chart(selection) {
+										// generate chart here
+									}
+
+									// getter-setter
+									chart.animationDuration = function(value) {
+										if(!arguments.length) return animationDuration;
+										animationDuration = value
+										return chart;
+									}
+									return chart;
+								}
+							```
+						</script>
+					</section>
+					<section data-state="content-slide" data-markdown>
+						<script type="text/template">
+							## Horizontal bar chart
+
+							```Javascript
+								var data = [
+									{name: "Locke",    value:  4},
+									{name: "Reyes",    value:  8},
+									{name: "Ford",     value: 15}
+								];
+
+								var horizontalBarChart = barChart()
+								                   .width(500)
+								                   .animationDuration(400)
+								                   .fillColor('green');
+
+								d3.select('#chart').datum(data).call(horizontalBarChart);
+							```
+						</script>
+					</section>
+				</section>
+				<section data-state="content-slide">Pokedex</section>
+				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page"><section>
 			</div>
 		</div>
 
@@ -53,6 +172,24 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+			Reveal.addEventListener('content-slide', function() {
+		    var slideHeader = document.getElementsByClassName("reveal--header-slide");
+				if (slideHeader.length == 0) {
+					revealDiv = document.getElementsByClassName("reveal")[0];
+					newElementDiv = document.createElement('div');
+					newElementDiv.className = 'reveal--header-slide';
+					revealDiv.insertBefore(newElementDiv, revealDiv.firstChild);
+				}
+			}, false );
+
+			Reveal.addEventListener('special-slide', function() {
+				var slideHeader = document.getElementsByClassName("reveal--header-slide");
+				if (slideHeader.length > 0) {
+					slideHeader[0].remove()
+				}
+			}, false );
+
 		</script>
 	</body>
 </html>
