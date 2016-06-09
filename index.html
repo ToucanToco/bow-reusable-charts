@@ -190,10 +190,59 @@
 					</ul>
 				</section>
 				<section data-state="content-slide">
-					<a href="pokedex/index.html" target="_blank">Pokedex</a>
+					<section>
+						<h3>Composant recherche</h3>
+						<p>Retrouver le nom des pokémons</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							##Pokedex component
+
+							```Javascript
+								function pokedex() {
+									//default variables
+
+									function search(selection) {
+										//show pokemon's name
+									}
+
+									search.valueSelector = function(value) {
+										if(!arguments.length) return valueSelector;
+										valueSelector = value;
+										return search;
+									}
+
+									return search;
+								}
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							##Use pokedex component
+
+							```Javascript
+								var pokedex = pokedex()
+																		.valueSelector('name')
+																		.imgSelection('#imgPokemon')
+																		.maxPokemon(4)
+
+								d3.select("#nb")
+							  .on("keyup", function() {
+							    d3.select("#info-screen")
+							    .datum(fuse.search(this.value))
+							    .call(pokedex)
+							  });
+							```
+						</script>
+					</section>
+					<section>
+						<h3>Pokedex</h3>
+						<a href="pokedex/index.html">Demo</a>
+					</section>
 				</section>
 				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page">
-					<h3>D3js web components <3</h3>
+					<h1>D3js web components ?</h1>
 				<section>
 			</div>
 		</div>

@@ -207,14 +207,14 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #2a76dd;
+  color: #A0D1C5;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #6ca0e8;
+  color: #F3C600;
   text-shadow: none;
   border: none; }
 
@@ -250,19 +250,19 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #2a76dd; }
+  border-right-color: #F3C600; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #2a76dd; }
+  border-left-color: #F3C600; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #2a76dd; }
+  border-bottom-color: #F3C600; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #2a76dd; }
+  border-top-color: #F3C600; }
 
 .reveal .controls .navigate-left.enabled:hover {
   border-right-color: #6ca0e8; }
@@ -291,6 +291,15 @@ body {
 /*********************************************
  * CUSTOM CLASS
  *********************************************/
+
+ .reveal ul li {
+   color: #A0D1C5;
+ }
+
+ .reveal ul li span {
+   color: #404040;
+ }
+ 
 .reveal--special-page {
   color: #fff;
 }
@@ -308,17 +317,17 @@ body {
   background-color: #F3C600;
 }
 
+.reveal--special-page ul {
+  color: #fff;
+}
+
+.reveal--special-page ul li {
+  color: #fff;
+}
+
 .reveal--header-slide {
   background-color: #F3C600;
   height: 10px;
-}
-
-.reveal ul li {
-  color: #A0D1C5;
-}
-
-.reveal ul li span {
-  color: #404040;
 }
 
 .reveal .list-image {
