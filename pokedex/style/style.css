@@ -403,7 +403,7 @@
   height: 35px;
   border-radius: 10px;
   border: none;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
   box-shadow: 0 0 7px #004846 inset;
   border: solid #222222 1px;
@@ -538,6 +538,7 @@
 /* line 527, ../sass/style.scss */
 #info-screen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -553,7 +554,8 @@
 
 /* line 542, ../sass/style.scss */
 #info-screen p {
-  font-size: 1.2em;
+  font-size: 1em;
+  margin:0;
 }
 
 /* line 546, ../sass/style.scss */
