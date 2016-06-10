@@ -299,14 +299,16 @@ body {
  .reveal ul li span {
    color: #404040;
  }
- 
+
 .reveal--special-page {
   color: #fff;
 }
 
 .reveal--special-page h1,
+.reveal--special-page h2,
 .reveal--special-page h3 {
   color: #fff;
+  margin: 0 0 20px 0;
 }
 
 .reveal--special-page h3 {
@@ -323,6 +325,16 @@ body {
 
 .reveal--special-page ul li {
   color: #fff;
+}
+
+.reveal--special-page span {
+  color: #fff;
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+.reveal--special-page span i {
+  margin-right: 5px;
 }
 
 .reveal--header-slide {
@@ -353,6 +365,12 @@ body {
   margin: 0;
   font-size: 0.4em;
   font-weight: 400;
+}
+
+.reveal .social-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #chart {
