@@ -1,15 +1,15 @@
 {
-  "name": "reveal.js",
+  "name": "Reusable charts",
   "version": "3.3.0",
   "main": [
     "js/reveal.js",
     "css/reveal.css"
   ],
-  "homepage": "http://lab.hakim.se/reveal-js/",
+  "homepage": "http://jeremypinhel.com/d3-reusable-charts",
   "license": "MIT",
-  "description": "The HTML Presentation Framework",
+  "description": "Reusable charts de d3 : un pattern ré-utilisable pour créer des composants JS",
   "authors": [
-    "Hakim El Hattab <hakim.elhattab@gmail.com>"
+    "Jeremy Pinhel <jeremy.pinhel@gmail.com>"
   ],
   "dependencies": {
     "headjs": "~1.0.3"
