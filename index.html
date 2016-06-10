@@ -189,6 +189,7 @@
 					<section>
 						<h3>Composant recherche</h3>
 						<p>Retrouver le nom des pokémons</p>
+						<img src="pokedex/images/pokemon-png/pikachu.png" height="100" style="border:none; box-shadow: none; background: none"/>
 					</section>
 					<section data-markdown>
 						<script type="text/template">
@@ -223,11 +224,9 @@
 																		.imgSelection('#imgPokemon')
 																		.maxPokemon(4)
 
-								d3.select("#nb")
-							  .on("keyup", function() {
-							    d3.select("#info-screen")
-							    .datum(fuse.search(this.value))
-							    .call(pokedex)
+								d3.select("#nb").on("keyup", function() {
+								    d3.select("#info-screen").datum(fuse.search(this.value))
+								    .call(pokedex)
 							  });
 							```
 						</script>
