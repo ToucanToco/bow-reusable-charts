@@ -1,9 +1,9 @@
 {
-  "name": "reveal.js",
+  "name": "Reusable charts",
   "version": "3.3.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
+  "description": "Reusable charts de d3 : un pattern ré-utilisable pour créer des composants JS",
+  "homepage": "http://jeremypinhel.com/d3-reusable-charts",
+  "subdomain": "d3-reusable-charts",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
