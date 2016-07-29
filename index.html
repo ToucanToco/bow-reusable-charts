@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="description" content="Reusable charts d3js, un pattern réutilisable pour créer des composants JS">
-		<meta name="author" content="Jeremy Pinhel">
-		<title>Reusable charts</title>
+		<meta name="description" content="Reveal test">
+		<meta name="author" content="Toucan-Toco">
+		<title>Reveal Test</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/tc-style.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -27,32 +27,37 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-color="#A0D1C5" class="reveal--special-page" data-state="special-slide">
-					<h1>Reusable charts d3js</h1>
-					<h3><span>Un pattern réutilisable pour créer des composants JS</span></h3>
+					<h1>This is a title</h1>
+					<h3>This is a subtitle</h3>
+					<p>This is a paragraph</p>
 				</section>
 				<section data-state="content-slide">
-					<h4>Jeremy Pinhel</h4>
-					<p>CTO @ Colecule</p>
-					<img src="img/colecule.png" class="plain" height="122">
+					<h3>Toucan Toco</h3>
+					<img src="img/TOUCANTOCO_logo.png" class="plain" height="122">
 				</section>
 				<section data-state="content-slide">
 					<section data-state="content-slide">
 						<h3>Un peu d'histoire...</h3>
-						<h4>D3js</h4>
-						<br />
-						<ul>
-							<li><span>Mike Bostock</span></li>
-							<li><span>Manipuler le DOM en se basant sur la data</span></li>
-						</ul>
+						<p>Toucan Toco est éditeur de logiciel, qui permet de démocratiser l’accès à la donnée dans l’entreprise.</p>
+						<p class="fragment small-p">(Appuie sur la flèche du bas pour accéder à la sous-partie)</p>
 						<aside class="notes">
-							Mike Bostock est le créateur de d3js, il travaillait pour le new york times
-							Sa librairie se base sur les data pour construite le DOM
+							(Oups j'ai oublié certaines choses mais les notes sont la pour me le rappeler !!)
 						</aside>
 					</section>
 					<section data-state="content-slide">
-						<h3>Problématique ...</h3>
-						<br />
-						<div class="list-image">
+						<h3>5 piliers</h3>
+						<ul>
+							<li class="fragment"><span>Ultramobité</span></li>
+							<li class="fragment"><span>Agilité/Time to market</span></li>
+							<li class="fragment"><span>UX exceptionnelle</span></li>
+							<li class="fragment"><span>Agréggation de datasources</span></li>
+							<li class="fragment"><span>Sécurité de la donnée</span></li>
+						</ul>
+					</section>
+				</section>
+				<section data-state="content-slide">
+					<h3>Quelques graphiques</h3>
+					<div class="list-image">
 							<div class="ul-img">
 								<img src="img/chart-types/barchart.png"/>
 								<p>Bar chart</p>
@@ -97,25 +102,10 @@
 							</div>
 						</div>
 					</section>
-					<section data-state="content-slide">
-						<h3>Début de solution</h3>
-						<h4>Reusable charts</h4>
-						<p>une convention proposée par Mike Bostock en 2012</p>
-						<p class="fragment">indépendant des frameworks</p>
-						<p class="fragment">une proposition pour les web components</p>
-						<aside class="notes">
-							Il propose une convention simple qui permet de se détacher de toute librarie et framework.
-							Permettant ainsi une méthode pour construire des web components
-
-							Un nouveau développeur qui veut contruire web component commence par Angualarjs et React.
-							Même si ça fait le café, on ne sait pas toujours ce se passe à l'intérieur.
-						</aside>
-					</section>
 				</section>
 				<section data-state="content-slide">
 					<section>
 						<h3>A quoi ça ressemble ?</h3>
-						<p class="fragment">déterminer les élements qui sont customisables</p>
 					</section>
 					<section data-markdown>
 						<script type="text/template">
@@ -140,110 +130,15 @@
 							```
 						</script>
 					</section>
-					<section data-markdown>
-						<script type="text/template">
-							## Horizontal bar chart
-
-							```Javascript
-								var data = [
-									{name: "Locke",    value:  4},
-									{name: "Reyes",    value:  8},
-									{name: "Ford",     value: 15}
-								];
-
-								var horizontalBarChart = barChart()
-								                   .width(500)
-								                   .animationDuration(400)
-								                   .fillColor('green');
-
-								d3.select('#chart').datum(data).call(horizontalBarChart);
-							```
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							## Fonction call d3js
-							```Javascript
-								d3.select('#chart').datum(data).call(horizontalBarChart)
-
-								// équivalent à
-
-								horizontalBarChart(d3.select('#chart').datum(data))
-							```
-							Invoque une fois la fonction horizontalBarChart, en lui donnant l'élement #chart.
-						</script>
-					</section>
 					<section data-state="exemple-chart">
 						<h4>Et voilà ...</h4>
-						<div id="chart"></div>
 					</section>
-				</section>
-				<section data-state="content-slide">
-					<h3>Et si on allait plus loin ...</h3>
-					<ul>
-						<li><span>Méthode simple</span></li>
-						<li><span>Un composant de recherche</span></li>
-					</ul>
-				</section>
-				<section data-state="content-slide">
-					<section>
-						<h3>Composant recherche</h3>
-						<p>Retrouver le nom des pokémons</p>
-						<img src="pokedex/images/pokemon-png/pikachu.png" height="100" style="border:none; box-shadow: none; background: none"/>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							##Pokedex component
-
-							```Javascript
-								function pokedex() {
-									//default variables
-
-									function search(selection) {
-										//show pokemon's name
-									}
-
-									search.valueSelector = function(value) {
-										if(!arguments.length) return valueSelector;
-										valueSelector = value;
-										return search;
-									}
-
-									return search;
-								}
-							```
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							##Use pokedex component
-
-							```Javascript
-								var pokedex = pokedex()
-																		.valueSelector('name')
-																		.imgSelection('#imgPokemon')
-																		.maxPokemon(4)
-
-								d3.select("#nb").on("keyup", function() {
-								    d3.select("#info-screen").datum(fuse.search(this.value))
-								    .call(pokedex)
-							  });
-							```
-						</script>
-					</section>
-					<section>
-						<h3>Pokedex</h3>
-						<a href="pokedex/index.html" target="_blank">Demo</a>
-					</section>
-				</section>
-				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page">
-					<h3>D3js web components ?</h3>
 				</section>
 				<section data-background-color="#A0D1C5" data-state="special-slide" class="reveal--special-page">
 					<h2>Merci</h2>
-					<h3>Questions?</h3>
+					<h3>Des questions?</h3>
 					<div class="social-info">
-						<span><i class="fa fa-twitter" aria-hidden="true"></i>@jerempinhel</span>
+						<span><i class="fa fa-twitter" aria-hidden="true"></i>@toucan_toco</span>
 					</div>
 				</section>
 			</div>
@@ -251,8 +146,6 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script src="lib/js/horizontal-barchart.js"></script>
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
