@@ -8,7 +8,7 @@
 - [Flux de texte](#flux-de-texte)
 - [Bande de couleur en haut] (#bande-de-couleur-en-haut)
 
-## Création de slides
+## Creation de slides
 
 Pour créer un nouveau slide, on utilise la balise ```<section>```. Exemple :<br>
 ```html
