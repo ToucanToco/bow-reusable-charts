@@ -1,11 +1,11 @@
 # Toucan-Toco reveal template
 
 ## L'essentiel
-- [Création de slides] (#creation-de-slides)
-- [Flèches directionelles](#fleches-directionelles)
+- [Creation de slides] (#creation-de-slides)
+- [Fleches directionelles](#fleches-directionelles)
   - [Direction des slides](#direction-des-slides)
   - [Couleurs](#couleurs)
-- [Flux de texte](#Flux de texte)
+- [Flux de texte](#flux-de-texte)
 - [Bande de couleur en haut] (#bande-de-couleur-en-haut)
 
 ## Création de slides
@@ -17,7 +17,7 @@ Pour créer un nouveau slide, on utilise la balise ```<section>```. Exemple :<br
 </section>
 ```
 
-## Flèches directionelles
+## Fleches directionelles
 
 ### Direction des slides
 
