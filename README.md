@@ -1,1 +1,1 @@
-# Toucan-toco Reveal-template
+# Toucan-Toco reveal template
